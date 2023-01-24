@@ -4,7 +4,6 @@ Web para realizar sorteos utilizando **EJS** y **Express**.
 
 #### Imagenes:
 
-[url=https://postimg.cc/cKdWh9qH][img]https://i.postimg.cc/cKdWh9qH/Buscar-Personal-1.png[/img][/url]
+[![Buscar-Personal-1.png](https://i.postimg.cc/cJnJs2XQ/Buscar-Personal-1.png)](https://postimg.cc/cKdWh9qH)
 
-[url=https://postimg.cc/TyQ64VGc][img]https://i.postimg.cc/TyQ64VGc/Buscar-Personal-2.png[/img][/url]
-
+[![Buscar-Personal-2.png](https://i.postimg.cc/nzfhM2PN/Buscar-Personal-2.png)](https://postimg.cc/TyQ64VGc)
