@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Participante</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <h3> REALIZA TU SORTEO </h3>
+            <ul class="nav-menu">
+                <li class="active"><a href="/"> Inicio </a></li>
+                <li><a href="/historialGanadores"> Historial de Ganadores </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="editar">
+            <div class="header-carga">
+                <p class="titulo"> EDITAR UN PARTICIPANTE </p>
+            </div>  
+            
+            <form action="/update/<%= data.cod_par %>" method="POST" class="form">
+                <label for="nombre_par"> Nombre </label>
+                <input class="form-input" type="text" id="nombre_par" name="nombre_par" value="<%= data.nombre_par %>" /> 
+    
+                <label for="apellido_par"> Apellido </label>
+                <input class="form-input" type="text" id="apellido_par" name="apellido_par" value="<%= data.apellido_par %>"  /> 
+    
+                <label for="ultimos_dni_par"> Ultimos 3 DNI </label>
+                <input class="form-input" type="text" id="ultimos_dni_par" name="ultimos_dni_par" value="<%= data.ultimos_dni_par %>"  /> 
+                
+                <a href="">
+                    <button class="btn btn-primary">GUARDAR</button>
+                </a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

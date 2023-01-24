@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Participante</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <h3> REALIZA TU SORTEO </h3>
+            <ul class="nav-menu">
+                <li><a href="/"> Inicio </a></li>
+                <li><a href="/historialGanadores"> Historial de Ganadores </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="editar">
+            <div class="header-carga">
+                <p class="titulo"> ¡ESTOS SON LOS GANADORES! </p>
+            </div>  
+            
+            <div class="table-container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Ultimos DNI</th>
+                        </tr>
+                    </thead>
+            
+                    <tbody>
+                        <% if(data){ %>
+                            <% data.forEach((participante) => { %>
+                                <tr>
+                                    <td> <%= participante.cod_par %> </td>
+                                    <td> <%= participante.nombre_par %> </td>
+                                    <td> <%= participante.apellido_par %> </td>
+                                    <td> <%= participante.ultimos_dni_par %> </td>
+                                </tr>
+                            <% }) %>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div> <!-- table-container -->
+        </div>
+    </div>
+</body>
+</html>

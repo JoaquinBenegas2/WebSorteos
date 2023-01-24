@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Participantes</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <div class="circle"></div>
+    <div class="big-circle"></div>
+    <header>
+        <nav class="nav">
+            <h3> REALIZA TU SORTEO </h3>
+            <ul class="nav-menu">
+                <li class="active"><a href="/"> Inicio </a></li>
+                <li><a href="/historialGanadores"> Historial de Ganadores </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="sorteo">
+            <div class="carga">
+                <div class="header-carga">
+                    <p class="titulo"> CARGAR UN PARTICIPANTE </p>
+                </div>     
+
+                <form action="/add" method="POST" class="form">
+                    <label for="nombre_par"> Nombre </label>
+                    <input class="form-input" type="text" id="nombre_par" name="nombre_par" /> 
+                    <label for="apellido_par"> Apellido </label>
+                    <input class="form-input" type="text" id="apellido_par" name="apellido_par" /> 
+                    <label for="ultimos_dni_par"> Ultimos 3 DNI </label>
+                    <input class="form-input" type="text" id="ultimos_dni_par" name="ultimos_dni_par" /> 
+                    
+                    <a href="">
+                        <button class="btn btn-primary">GUARDAR</button>
+                    </a>
+                </form>
+            </div>
+
+            <div class="participantes">
+                <div class="header-participantes">
+                    <p class="titulo"> PARTICIPANTES </p>
+                    <a href="/sortear">
+                        <button class="btn btn-green">SORTEAR</button>
+                    </a>
+                </div>
+                
+                <div class="table-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Ultimos DNI</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                
+                        <tbody>
+                            <% if(data){ %>
+                                <% data.forEach((participante) => { %>
+                                    <tr>
+                                        <td> <%= participante.cod_par %> </td>
+                                        <td> <%= participante.nombre_par %> </td>
+                                        <td> <%= participante.apellido_par %> </td>
+                                        <td> <%= participante.ultimos_dni_par %> </td>
+                                        <td  class="buttons">
+                                            <a href="/edit/<%= participante.cod_par %>">
+                                                <button class="btn btn-primary">EDITAR</button>
+                                            </a>
+                                            <a href="/delete/<%= participante.cod_par %>">
+                                                <button class="btn btn-danger">BORRAR</button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <% }) %>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div> <!-- table-container -->
+            </div> <!-- participantes -->
+        </div> <!-- sorteo -->
+    </div> <!-- container -->
+</body>
+</html>
